@@ -7,6 +7,6 @@ module.exports = {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/',
     filename: 'ehd-js.cjs.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs'
   }
 }

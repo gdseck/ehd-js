@@ -1,9 +1,8 @@
 {
   "name": "ehd-js",
-  "version": "0.0.2",
+  "version": "0.0.12",
   "description": "EOD Historical Data API wrapper",
-  "main": "./lib/ehd-js.cjs.js",
-  "unpkg": "./lib/ehd-js.umd.js",
+  "main": "./lib/index.js",
   "types": "./index.d.ts",
   "files": [
     "index.d.ts",
@@ -15,7 +14,7 @@
     "build:cjs": "webpack --config ./build/webpack.common.js",
     "build:endpoints": "webpack --config ./build/webpack.endpoints.js",
     "build:es": "webpack --config ./build/webpack.module.js",
-    "build": "rimraf lib && npm run build:umd && npm run build:cjs && npm run build:endpoints",
+    "build": "rimraf lib && ttsc",
     "example": "ts-node -r tsconfig-paths/register example/index.ts",
     "test": "jest"
   },
@@ -39,6 +38,7 @@
     "@types/webpack-env": "1.16.0",
     "@typescript-eslint/eslint-plugin": "4.9.0",
     "babel-loader": "8.2.2",
+    "core-js": "3.8.3",
     "cross-env": "7.0.3",
     "dotenv": "8.2.0",
     "eslint": "7.15.0",
@@ -48,20 +48,23 @@
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-promise": "4.2.1",
     "jest": "26.6.3",
-    "node-fetch": "2.6.1",
     "prettier": "2.2.1",
-    "qs": "6.9.6",
     "rimraf": "3.0.2",
     "ts-jest": "26.4.4",
     "ts-loader": "8.0.11",
     "ts-node": "9.1.0",
     "tsconfig-paths": "3.9.0",
+    "ttypescript": "1.5.12",
     "typescript": "4.1.2",
+    "typescript-transform-paths": "2.2.2",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11",
     "webpack-node-externals": "2.5.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "node-fetch": "2.6.1",
+    "qs": "6.9.6"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:gdseck/ehd-js.git"
