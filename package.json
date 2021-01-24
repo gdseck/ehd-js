@@ -1,6 +1,6 @@
 {
-  "name": "@gdseck/ehd-js",
-  "version": "0.0.1",
+  "name": "ehd-js",
+  "version": "0.0.2",
   "description": "EOD Historical Data API wrapper",
   "main": "./lib/ehd-js.cjs.js",
   "unpkg": "./lib/ehd-js.umd.js",
@@ -65,8 +65,5 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:gdseck/ehd-js.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
