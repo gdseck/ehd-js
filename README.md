@@ -73,7 +73,7 @@ Every `ehd` method returns a Promise.
 
 | Method              | Sub Methods               |
 | ------------------- | ------------------------- |
-| `bondPrice`         |                           |
+| [`bondPrice`](#bondPrice)         |                           |
 | `bondFundamentals`  |                           |
 | `bulkEodData`       |                           |
 | `calendar`          |                           |
@@ -242,7 +242,7 @@ let prices = await ehd.endOfDayPrice({
 })
 ```
 
-### bondPrice
+### <a name="bondPrice"></a>bondPrice
 
 [official docs](https://eodhistoricaldata.com/financial-apis/bonds-fundamentals-and-historical-api/)
 
