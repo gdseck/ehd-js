@@ -71,33 +71,33 @@ Every `ehd` method returns a Promise.
 
 ### Overview
 
-| Method              | Sub Methods               |
-| ------------------- | ------------------------- |
-| [`bondPrice`](#bondPrice)         |                           |
-| `bondFundamentals`  |                           |
-| `bulkEodData`       |                           |
-| `calendar`          |                           |
-| `dividends`         |                           |
-| `endOfDayPrice`     | `ecbExchangeRates`        |
-|                     | `euribor`                 |
-|                     | `euriborFutures`          |
-|                     | `governmentBond`          |
-|                     | `libor`                   |
-|                     | `norgesBankExchangeRates` |
-| `fundamentals`      | `etf`                     |
-|                     | `mutualFund`              |
-|                     | `stock`                   |
-| `indexConstituents` |                           |
-| `intraday`          |                           |
-| `livePrices`        |                           |
-| `macroEconomics`    |                           |
-| `options`           |                           |
-| `search`            |                           |
-| `screener`          |                           |
-| `shortInterest`     |                           |
-| `splits`            |                           |
-| `technicals`        |                           |
-| `user`              |                           |
+| Method                                    | Sub Methods                                           |
+| ----------------------------------------- | ----------------------------------------------------- |
+| [`bondPrice`](#bondPrice)                 |                                                       |
+| [`bondFundamentals`](#bondFundamentals)   |                                                       |
+| [`bulkEodData`](#bulkEodData)             |                                                       |
+| [`calendar`](#calendar)                   |                                                       |
+| [`dividends`](#dividends)                 |                                                       |
+| [`endOfDayPrice`](#endOfDayPrice)         | [`ecbExchangeRates`](#ecbExchangeRates)               |
+|                                           | [`euribor`](#euribor)                                 |
+|                                           | [`euriborFutures`](#euriborFutures)                   |
+|                                           | [`governmentBond`](#governmentBond)                   |
+|                                           | [`libor`](#libor)                                     |
+|                                           | [`norgesBankExchangeRates`](#norgesBankExchangeRates) |
+| [`fundamentals`](#fundamentals)           | `etf`                                                 |
+|                                           | `mutualFund`                                          |
+|                                           | `stock`                                               |
+| [`indexConstituents`](#indexConstituents) |                                                       |
+| [`intraday`](#intraday)                   |                                                       |
+| [`livePrices`](#livePrices)               |                                                       |
+| [`macroEconomics`](#macroEconomics)       |                                                       |
+| [`options`](#options)                     |                                                       |
+| [`search`](#search)                       |                                                       |
+| [`screener`](#screener)                   |                                                       |
+| [`shortInterest`](#shortInterest)         |                                                       |
+| [`splits`](#splits)                       |                                                       |
+| [`technicals`](#technicals)               |                                                       |
+| [`user`](#user)                           |                                                       |
 
 ### Shared configs
 
@@ -269,7 +269,7 @@ const prices = await ehd.bondPrice({
 
 It is also possible to fetch historical bond prices using the `endOfDayPrice` method, but in that case you will need to add the `.BOND` affix and the result will not have the correct type.
 
-### bondFundamentals
+### <a name="bondFundamentals"></a>bondFundamentals
 
 [official docs](https://eodhistoricaldata.com/financial-apis/bonds-fundamentals-and-historical-api/)  
 cost: 1 API call / symbol
@@ -282,7 +282,7 @@ import ehd from 'ehd'
 const fundamentals = await ehd.bondFundamentals('US910047AG49')
 ```
 
-### bulkEodData
+### <a name="bulkEodData"></a>bulkEodData
 
 [official docs](https://eodhistoricaldata.com/financial-apis/bulk-api-eod-splits-dividends/)  
 cost: 1 API call / symbol OR 100 API calls / exchange
@@ -345,7 +345,7 @@ data = await ehd.bulkEodData({
 })
 ```
 
-### earningsTrends
+### <a name="earningsTrends"></a>earningsTrends
 
 [official docs](https://eodhistoricaldata.com/financial-apis/calendar-upcoming-earnings-ipos-and-splits/#Earnings_Trends_API)
 
@@ -371,7 +371,7 @@ data = await ehd.earningsTrends({
 })
 ```
 
-### upcomingEarnings
+### <a name="upcomingEarnings"></a>upcomingEarnings
 
 [official docs](https://eodhistoricaldata.com/financial-apis/calendar-upcoming-earnings-ipos-and-splits/#Upcoming_Earnings_API)
 
@@ -406,7 +406,7 @@ data = await ehd.upcomingEarnings({
 })
 ```
 
-### upcomingIpos
+### <a name="upcomingIpos"></a>upcomingIpos
 
 [official docs](https://eodhistoricaldata.com/financial-apis/calendar-upcoming-earnings-ipos-and-splits/#Upcoming_IPOs_API)
 
@@ -435,7 +435,7 @@ data = await ehd.upcomingIpos({
 })
 ```
 
-### upcomingSplits
+### <a name="upcomingSplits"></a>upcomingSplits
 
 [official docs](https://eodhistoricaldata.com/financial-apis/calendar-upcoming-earnings-ipos-and-splits/#Upcoming_Splits_API)
 
@@ -464,7 +464,7 @@ data = await ehd.upcomingSplits({
 })
 ```
 
-### dividends
+### <a name="dividends"></a>dividends
 
 [official docs](https://eodhistoricaldata.com/financial-apis/api-splits-dividends/#Historical_Dividends_API)  
 [example json response](https://eodhistoricaldata.com/api/div/AAPL.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&from=2000-01-01&fmt=json)
@@ -491,7 +491,7 @@ const data = await ehd.dividends({
 })
 ```
 
-### endOfDayPrice
+### <a name="endOfDayPrice"></a>endOfDayPrice
 
 [official docs](https://eodhistoricaldata.com/financial-apis/api-for-historical-data-and-volumes/#Quick_Start)  
 [example json response](https://eodhistoricaldata.com/api/eod/MCD.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&period=d&fmt=json)
@@ -526,7 +526,7 @@ const data = await ehd.endOfDayPrice({
 
 The `endOfDayPrice` method can also be used to fetch government bond data, exchange and interbank rates. To help with the construction of the codes, additional helper methods have been implemented.
 
-#### governmentBond
+#### <a name="governmentBond"></a>governmentBond
 
 [official docs](https://eodhistoricaldata.com/financial-apis/economic-data-api/#Government_Bonds)
 
@@ -558,7 +558,7 @@ data = await ehd.governmentBondPrice({
 })
 ```
 
-#### euribor
+#### <a name="euribor"></a>euribor
 
 [official docs](https://eodhistoricaldata.com/financial-apis/economic-data-api/#LIBOR_EURIBOR_and_STIBOR)
 
@@ -582,7 +582,7 @@ const data = await ehd.euribor({
 })
 ```
 
-#### euriborFutures
+#### <a name="euriborFutures"></a>euriborFutures
 
 [official docs](https://eodhistoricaldata.com/financial-apis/economic-data-api/#LIBOR_EURIBOR_and_STIBOR)
 
@@ -605,7 +605,7 @@ const data = await ehd.euriborFutures({
 })
 ```
 
-#### libor
+#### <a name="libor"></a>libor
 
 [official docs](https://eodhistoricaldata.com/financial-apis/economic-data-api/#LIBOR_EURIBOR_and_STIBOR)
 
@@ -632,7 +632,7 @@ const data = await ehd.libor({
 })
 ```
 
-#### stibor
+#### <a name="stibor"></a>stibor
 
 [official docs](https://eodhistoricaldata.com/financial-apis/economic-data-api/#LIBOR_EURIBOR_and_STIBOR)
 
@@ -658,7 +658,7 @@ const data = await ehd.stibor({
 })
 ```
 
-#### ecbExchangeRates
+#### <a name="echExchangeRates"></a>ecbExchangeRates
 
 [official docs](https://eodhistoricaldata.com/financial-apis/economic-data-api/#ECB_Exchange_Rates)
 
@@ -684,7 +684,7 @@ const data = await ehd.ecbExchangeRates({
 })
 ```
 
-#### norgesBankExchangeRates
+#### <a name="norgesBankExchangeRates"></a>norgesBankExchangeRates
 
 [official docs](https://eodhistoricaldata.com/financial-apis/economic-data-api/#Norge_Bank_Exchange_Rates_NOK)
 
@@ -701,14 +701,14 @@ _requires_ Fundamentals Data Feed
 | fmt      | _no_     | `"csv"` \| `"json"`                                 | `"json"` |
 
 ```js
-// NorgesBank exchange rates
+import ehd from 'ehd-js'
 
-data = await ehd.norgesBankExchangeRates({
+const data = await ehd.norgesBankExchangeRates({
   currency: 'EUR'
 })
 ```
 
-### exchangeDetails
+### <a name="exchangeDetails"></a>exchangeDetails
 
 [official docs](https://eodhistoricaldata.com/financial-apis/exchanges-api-trading-hours-and-holidays/)
 
@@ -734,7 +734,7 @@ const data = await ehd.exchangeDetails({
 })
 ```
 
-### exchangesList
+### <a name="exchangesList"></a>exchangesList
 
 [official docs](https://eodhistoricaldata.com/financial-apis/exchanges-api-list-of-tickers-and-trading-hours/)
 
@@ -752,7 +752,7 @@ import ehd from 'ehd-js'
 const data = await ehd.exchangesList()
 ```
 
-### exchangeSymbolList
+### <a name="exchangeSymbolList"></a>exchangeSymbolList
 
 [official docs](https://eodhistoricaldata.com/financial-apis/exchanges-api-list-of-tickers-and-trading-hours/)
 
@@ -773,7 +773,7 @@ const data = await ehd.exchangeSymbolList({
 })
 ```
 
-### fundamentals
+### <a name="fundamentals"></a>fundamentals
 
 [official docs](https://eodhistoricaldata.com/financial-apis/stock-etfs-fundamental-data-feeds/)  
 [example stock response](https://eodhistoricaldata.com/api/fundamentals/AAPL.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX)  
@@ -815,7 +815,7 @@ const eft = await ehd.fundamentals.etf('VWCE.XETRA')
 const mutualFund = await ehd.fundamentals.mutualFund('SWPPX.US')
 ```
 
-### indexConstituents
+### <a name="indexConstituents"></a>indexConstituents
 
 [official docs](https://eodhistoricaldata.com/financial-apis/stock-etfs-fundamental-data-feeds/#Index_Constituents_or_Index_Components_API)
 
@@ -835,7 +835,7 @@ const supportedIndices = await ehd.exchangeSymbolList({
 const indexInfo = await ehd.indexConsituents('GSCP')
 ```
 
-### intraday
+### <a name="intraday"></a>intraday
 
 [official docs](https://eodhistoricaldata.com/financial-apis/intraday-historical-data-api/)  
 [example response](https://eodhistoricaldata.com/api/intraday/AAPL.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&interval=5m&fmt=json)
@@ -867,7 +867,7 @@ const data = await ehd.intraday({
 })
 ```
 
-### livePrices
+### <a name="livePrices"></a>livePrices
 
 [official docs](https://eodhistoricaldata.com/financial-apis/live-realtime-stocks-api/)
 
@@ -890,7 +890,7 @@ const data = await ehd.livePrices({
 })
 ```
 
-### macroEconomics
+### <a name="macroEconomics"></a>macroEconomics
 
 [official docs](https://eodhistoricaldata.com/financial-apis/macroeconomics-data-and-macro-indicators-api/)
 
@@ -911,7 +911,7 @@ const data = await ehd.macroEconomics({
 })
 ```
 
-### options
+### <a name="options"></a>options
 
 [official docs](https://eodhistoricaldata.com/financial-apis/stock-options-data/)  
 [example response](https://eodhistoricaldata.com/api/options/AAPL.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX)
@@ -945,7 +945,7 @@ data = await ehd.options({
 })
 ```
 
-### search
+### <a name="search"></a>search
 
 [official docs](https://eodhistoricaldata.com/financial-apis/search-api-for-stocks-etfs-mutual-funds-and-indices/)
 
@@ -975,7 +975,7 @@ data = await ehd.search({
 })
 ```
 
-### screener
+### <a name="screener"></a>screener
 
 [official docs](https://eodhistoricaldata.com/financial-apis/search-api-for-stocks-etfs-mutual-funds-and-indices/)
 
@@ -1043,7 +1043,7 @@ const data = await ehd.screener({
 })
 ```
 
-### shortInterest
+### <a name="shortInterest"></a>shortInterest
 
 [official docs](https://eodhistoricaldata.com/financial-apis/api-splits-dividends/#Historical_Short_Interest_API)  
 [example response](https://eodhistoricaldata.com/api/shorts/AAPL.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&from=2000-01-01&fmt=json)
@@ -1067,7 +1067,7 @@ const data = await ehd.shortInterest({
 })
 ```
 
-### splits
+### <a name="splits"></a>splits
 
 [official docs](https://eodhistoricaldata.com/financial-apis/api-splits-dividends/#Historical_Splits_API)  
 [example response](https://eodhistoricaldata.com/api/splits/AAPL.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&from=2000-01-01&fmt=json)
@@ -1091,7 +1091,7 @@ const data = await ehd.splits({
 })
 ```
 
-### technicals
+### <a name="technicals"></a>technicals
 
 [official docs](https://eodhistoricaldata.com/financial-apis/technical-indicators-api/)
 
@@ -1148,7 +1148,7 @@ data = await ehd.technicals({
 })
 ```
 
-### user
+### <a name="user"></a>user
 
 [official docs](https://eodhistoricaldata.com/financial-apis/user-api/)
 
