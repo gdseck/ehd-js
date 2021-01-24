@@ -1018,13 +1018,13 @@ export type EHDScreenerSignal =
   | 'wallstreet_hi'
 ```
 
-| option  | required | type                                                        | default  |
-| ------- | -------- | ----------------------------------------------------------- | -------- | --- |
-| filters | _no_     | `[key in EHDScreenerFilter]?: [EHDScreenerOperation, string | number]` |     |
-| signal  | _no_     | `EHDScreenerSignal[] `                                      |          |
-| sort    | _no_     | `[key in EHDScreenerSortKey]?: 'asc'                        | 'desc'`  |     |
-| limit   | _no_     | number                                                      | 50       |
-| offset  | _no_     | number                                                      | 0        |
+| option  | required | type                                                                  | default |
+| ------- | -------- | --------------------------------------------------------------------- | ------- |
+| filters | _no_     | [key in EHDScreenerFilter]?: [EHDScreenerOperation, string \| number] |         |
+| signal  | _no_     | `EHDScreenerSignal[] `                                                |         |
+| sort    | _no_     | [key in EHDScreenerSortKey]?: 'asc' \| 'desc'                         |         |
+| limit   | _no_     | number                                                                | 50      |
+| offset  | _no_     | number                                                                | 0       |
 
 ```js
 import ehd from 'ehd-js'
