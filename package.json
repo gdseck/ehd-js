@@ -1,6 +1,6 @@
 {
-  "name": "ehd-js",
-  "version": "1.0.0",
+  "name": "@gdseck/ehd-js",
+  "version": "0.0.1",
   "description": "EOD Historical Data API wrapper",
   "main": "./lib/ehd-js.cjs.js",
   "unpkg": "./lib/ehd-js.umd.js",
