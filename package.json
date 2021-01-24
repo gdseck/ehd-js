@@ -1,0 +1,72 @@
+{
+  "name": "ehd-js",
+  "version": "1.0.0",
+  "description": "EOD Historical Data API wrapper",
+  "main": "./lib/ehd-js.cjs.js",
+  "unpkg": "./lib/ehd-js.umd.js",
+  "types": "./index.d.ts",
+  "files": [
+    "index.d.ts",
+    "lib/**",
+    "src/types/**/**"
+  ],
+  "scripts": {
+    "build:umd": "webpack --config ./build/webpack.browser.js",
+    "build:cjs": "webpack --config ./build/webpack.common.js",
+    "build:endpoints": "webpack --config ./build/webpack.endpoints.js",
+    "build:es": "webpack --config ./build/webpack.module.js",
+    "build": "rimraf lib && npm run build:umd && npm run build:cjs && npm run build:endpoints",
+    "example": "ts-node -r tsconfig-paths/register example/index.ts",
+    "test": "jest"
+  },
+  "author": "Gregory Deseck",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "7.12.8",
+    "@babel/core": "7.12.9",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "7.12.7",
+    "@babel/plugin-transform-regenerator": "7.12.1",
+    "@babel/plugin-transform-runtime": "7.12.1",
+    "@babel/plugin-transform-typescript": "7.12.1",
+    "@babel/preset-env": "7.12.7",
+    "@babel/preset-typescript": "7.12.7",
+    "@babel/runtime": "7.12.5",
+    "@types/jest": "26.0.20",
+    "@types/node": "14.14.21",
+    "@types/node-fetch": "2.5.8",
+    "@types/qs": "6.9.5",
+    "@types/webpack-env": "1.16.0",
+    "@typescript-eslint/eslint-plugin": "4.9.0",
+    "babel-loader": "8.2.2",
+    "cross-env": "7.0.3",
+    "dotenv": "8.2.0",
+    "eslint": "7.15.0",
+    "eslint-config-prettier": "7.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-promise": "4.2.1",
+    "jest": "26.6.3",
+    "node-fetch": "2.6.1",
+    "prettier": "2.2.1",
+    "qs": "6.9.6",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.4.4",
+    "ts-loader": "8.0.11",
+    "ts-node": "9.1.0",
+    "tsconfig-paths": "3.9.0",
+    "typescript": "4.1.2",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11",
+    "webpack-node-externals": "2.5.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gdseck/ehd-js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
